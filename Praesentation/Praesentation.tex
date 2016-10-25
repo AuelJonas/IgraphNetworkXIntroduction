@@ -15,7 +15,7 @@
 \usepackage{rotating}
 
 \author{Jonas Auel, Sven Fritz}
-\title{NetworkX and IGraph}
+\title{NetworkX and igraph}
 \subtitle{Graph Analysis using Python}
 %\logo{}
 \institute{Uni Mannheim}
@@ -28,14 +28,16 @@
 
 \begin{document}
 	\maketitle
-	\frame{\tableofcontents\frametitle{Overview}}
+	%\frame{\tableofcontents\frametitle{Overview}}
 	\section{Why Python?}
 	\begin{frame}{Why Python?}
 		\begin{itemize}
-			\item powerful programming language
+			\item powerful programming languages
 			\item allows clear and concise expressions of network algorithms
 			\item growing ecosystem of packages that provide more features
-			\item Python is an excellent "glue" language for putting together pieces of software
+			%\item Python is an excellent "glue" language for putting together pieces of software
+			\item provides packages in many fields, such as machine learning, statistics and numerics
+			\item in the U.S. Python is by now the most popular programming language for introduction courses
 		\end{itemize}
 	\end{frame}
 	\begin{frame}{NetworkX}
@@ -49,7 +51,7 @@
 			\item open source
 		\end{itemize}
 	\end{frame}
-	\begin{frame}{IGraph}
+	\begin{frame}{igraph}
 		\begin{itemize}
 			\item Network creation, manipulation, analyzation and visualization
 			\item available for C/R/Python
@@ -59,10 +61,10 @@
 			\item open source
 		\end{itemize}
 	\end{frame}
-	\begin{frame}{Graph types in NetworkX}
+	\begin{frame}{Graph types in NetworkX and igraph}
 		\centering
 		\begin{tabular}[]{c|c|c}
-			Graph type & NetworkX class & IGraph class \\
+			Graph type & NetworkX class & igraph class \\
 			\hline
 			Undirected & Graph & Graph \\
 			Directed & DiGraph & Graph \\
@@ -85,6 +87,11 @@
 			paths  passing through some  node $v$ other than $s, t$
 			\item if $s = t$, $\sigma(s, t) = 1$, and if $v \in {s, t}$,
 			$\sigma(s, t|v) = 0$.
+		\end{itemize}
+	\end{frame}
+	\begin{frame}{hub score}
+		\begin{itemize}
+			\item test
 		\end{itemize}
 	\end{frame}
 \end{document}
