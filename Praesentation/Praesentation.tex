@@ -1,0 +1,90 @@
+\documentclass[12pt]{beamer}
+\usetheme{Warsaw}
+\setbeamertemplate{headline}{}
+\usecolortheme{seahorse}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{graphicx}
+\usepackage{wrapfig}
+\usepackage{epstopdf} 
+\usepackage{epsfig} 
+\usepackage{psfrag} 
+\usepackage{pgfplots} 
+\usepackage{multirow}
+\usepackage{rotating}
+
+\author{Jonas Auel, Sven Fritz}
+\title{NetworkX and IGraph}
+\subtitle{Graph Analysis using Python}
+%\logo{}
+\institute{Uni Mannheim}
+\date{October 28th 2016}
+\newtheorem*{satz}{Satz}
+\newtheorem*{defi}{Definition}
+%\subject{}
+%\setbeamercovered{transparent}
+%\setbeamertemplate{navigation symbols}{}
+
+\begin{document}
+	\maketitle
+	\frame{\tableofcontents\frametitle{Overview}}
+	\section{Why Python?}
+	\begin{frame}{Why Python?}
+		\begin{itemize}
+			\item powerful programming language
+			\item allows clear and concise expressions of network algorithms
+			\item growing ecosystem of packages that provide more features
+			\item Python is an excellent "glue" language for putting together pieces of software
+		\end{itemize}
+	\end{frame}
+	\begin{frame}{NetworkX}
+		\begin{itemize}
+			\item Network creation, manipulation, analyzation (and visualization)
+			\item available for Python
+			\item supported platforms: Linux/Windows/Mac
+			\item load and store networks in standard and nonstandard data formats
+			\item nodes can be "anything" (e.g. images)
+			\item edges can hold arbitrary data (e.g. time series)
+			\item open source
+		\end{itemize}
+	\end{frame}
+	\begin{frame}{IGraph}
+		\begin{itemize}
+			\item Network creation, manipulation, analyzation and visualization
+			\item available for C/R/Python
+			\item supported platforms: Linux/Windows/Mac 
+			\item collection of graph analysis tools
+			\item emphasis on efficiency, portability, ease of use
+			\item open source
+		\end{itemize}
+	\end{frame}
+	\begin{frame}{Graph types in NetworkX}
+		\centering
+		\begin{tabular}[]{c|c|c}
+			Graph type & NetworkX class & IGraph class \\
+			\hline
+			Undirected & Graph & Graph \\
+			Directed & DiGraph & Graph \\
+			With self-loops & Graph, DiGraph & Graph \\
+			With parallel edges & MultiGraph, MultiDiGraph & Graph
+		\end{tabular}
+	\end{frame}
+	\begin{frame}{Betweenness centrality}
+		\begin{itemize}
+			\item Betweenness centrality of a node $v$: sum of the
+			fraction of all-pairs shortest paths that pass through $v$
+			\item 		
+			\begin{equation*}
+			c_B(v) =\sum_{s,t \in V} \frac{\sigma(s, t|v)}{\sigma(s, t)}
+			\end{equation*}	
+			\item  $V$: set of nodes,\\
+			$\sigma(s, t)$: number of
+			shortest $(s, t)$-paths, \\
+			$\sigma(s, t|v)$: number of those
+			paths  passing through some  node $v$ other than $s, t$
+			\item if $s = t$, $\sigma(s, t) = 1$, and if $v \in {s, t}$,
+			$\sigma(s, t|v) = 0$.
+		\end{itemize}
+	\end{frame}
+\end{document}
