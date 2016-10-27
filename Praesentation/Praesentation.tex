@@ -51,6 +51,23 @@
 			\item open source
 		\end{itemize}
 	\end{frame}
+	\begin{frame}{betweenness centrality}
+	\begin{itemize}
+		\item betweenness centrality of a node $v$: sum of the
+		fraction of all-pairs shortest paths that pass through $v$
+		\item 		
+		\begin{equation*}
+		c_B(v) =\sum_{s,t \in V} \frac{\sigma(s, t|v)}{\sigma(s, t)}
+		\end{equation*}	
+		\item  $V$: set of nodes,\\
+		$\sigma(s, t)$: number of
+		shortest $(s, t)$-paths, \\
+		$\sigma(s, t|v)$: number of those
+		paths  passing through some  node $v$ other than $s, t$
+		\item if $s = t$, $\sigma(s, t) = 1$, and if $v \in {s, t}$,
+		$\sigma(s, t|v) = 0$.
+	\end{itemize}
+	\end{frame}
 	\begin{frame}{igraph}
 		\begin{itemize}
 			\item network creation, manipulation, analyzation and visualization
@@ -72,23 +89,6 @@
 %			With parallel edges & MultiGraph, MultiDiGraph & Graph
 %		\end{tabular}
 %	\end{frame}
-	\begin{frame}{betweenness centrality}
-		\begin{itemize}
-			\item betweenness centrality of a node $v$: sum of the
-			fraction of all-pairs shortest paths that pass through $v$
-			\item 		
-			\begin{equation*}
-			c_B(v) =\sum_{s,t \in V} \frac{\sigma(s, t|v)}{\sigma(s, t)}
-			\end{equation*}	
-			\item  $V$: set of nodes,\\
-			$\sigma(s, t)$: number of
-			shortest $(s, t)$-paths, \\
-			$\sigma(s, t|v)$: number of those
-			paths  passing through some  node $v$ other than $s, t$
-			\item if $s = t$, $\sigma(s, t) = 1$, and if $v \in {s, t}$,
-			$\sigma(s, t|v) = 0$.
-		\end{itemize}
-	\end{frame}
 	\begin{frame}{hubs and authorities}
 		\begin{itemize}
 			\item authorities: nodes containing valuable content\\
