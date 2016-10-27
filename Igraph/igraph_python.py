@@ -6,7 +6,7 @@ import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 
-# initilize an undirected graph
+# initilize an undirected empty graph
 g = ig.Graph()
 
 # adding 3 vertices
@@ -18,7 +18,7 @@ g.add_edges([(0,1), (1,2)])
 ig.plot(g, bbox = (100, 100))
 
 # delete the 2nd vertex
-g.delete_vertices(1)
+g.delete_vertices(2)
 ig.plot(g, bbox = (100, 100))
 
 # initializing a directed graph
@@ -33,25 +33,24 @@ ig.plot(g, bbox = (300, 100))
 g = ig.Graph.Tree(6,3)
 ig.plot(g, bbox = (300,300))
 
-
-# In[ ]:
-
 # creating full graph
 g = ig.Graph.Full(4)
 ig.plot(g, bbox = (200,200))
 
 g = ig.Graph( [(0,1), (0,2), (0,3),(1,2),(1,4),(2,5),(2,4),(3,5),(4,6),(5,6)])
-# name the vertices
+print g
+
+# name vertices
 g.vs["name"] = ["MA", "HD", "SP", "KA", "S", "F", "M"]
-# name the vertice labels as the names
+# name the labels of the vertices
 g.vs["label"] = g.vs["name"]
+print g
+# plot graph
 ig.plot(g,layout = g.layout("sugiyama"), inline = False)
 
 ig.summary(g)
 
-print g
-
-# set weight true
+# set edge weight true
 g.es["weight"] = 1.0
 # add weights to graph
 g.es["weight"] = [5, 6, 6, 4, 7, 5, 4, 5, 7]
@@ -61,6 +60,12 @@ ig.summary(g)
 
 
 # # Example of hub and auth. score on a citation network
+
+##
+# L. A. Adamic and N. Glance, 
+# "The political blogosphere and the 2004 US Election", 
+# in Proceedings of the WWW-2005 Workshop on the Weblogging Ecosystem (2005)
+##
 
 # importing the Data Set
 g = ig.Graph.Read_GML("polblogs.gml")
@@ -76,7 +81,7 @@ pd.DataFrame(d, index=labels[hubtop[:n]])
 
 # calculating the hub score step by step
 A = np.matrix(g.get_adjacency().data)
-AAt = A * A.transpose() 
+AAt =  A * A.transpose()
 w, v = np.linalg.eig(AAt)
 maxeigen =  np.argmax(w)
 maxv =  max(v[:,maxeigen])
@@ -84,7 +89,7 @@ hubscore = np.multiply((1/maxv), v[:,maxeigen])
 hubscore = hubscore.A1
 
 hubtop = np.argsort(hubscore)[::-1]
-d = {"hub score top":hubscore[hubtop[:n]]}
+d = {"hub score top": hubscore[hubtop[:n]]}
 labels = np.asarray(g.vs["label"])
 pd.DataFrame(d, index=labels[hubtop[:n]])
 

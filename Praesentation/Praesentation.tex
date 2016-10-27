@@ -89,9 +89,35 @@
 			$\sigma(s, t|v) = 0$.
 		\end{itemize}
 	\end{frame}
-	\begin{frame}{hub score}
+	\begin{frame}{hubs and authorities}
 		\begin{itemize}
-			\item test
+			\item authorities: nodes containing valuable content\\
+			hubs: nodes pointing to authorities
+			\item x: vector of authorities \\
+			y: vector of hubs \\
+			A: adjacency matrix of the graph \\
+			$\alpha,\beta$: scaling parameters
+			\item $x = \alpha \beta A A^t x$, $y = \alpha \beta A^t A x$
+			\item x and y are a eigenvector of the largest eigenvalue of $A A^t$ respectively $A^t A$
+		\end{itemize}
+	\end{frame}
+	\begin{frame}{differences and similarities between the packages}
+		\begin{itemize}
+			\item different syntax (init. graph, adding nodes, drawing graphs, etc.)
+			\item both are very powerful and have many implemented algorithms
+			\item NetworkX has no own drawing tool 
+			\item NetworkX only available for Python, igraph is available for R and Python
+			\item documentation on Python is better for NetworkX (igraph has a good R documentation)
+		\end{itemize}
+	\end{frame}
+	\begin{frame}{references}
+		\begin{itemize}
+			\item Anaconda/Python: https://www.continuum.io/downloads
+			\item NetworkX: \\https://networkx.github.io/
+			\item Network data (dolphin and political web blog): http://www-personal.umich.edu/\textasciitilde mejn/netdata/
+			\item igraph: \\
+			http://igraph.org/python/
+			\item Dolphin Network paper: https://arxiv.org/ftp/q-bio/papers/0403/0403029.pdf			
 		\end{itemize}
 	\end{frame}
 \end{document}
