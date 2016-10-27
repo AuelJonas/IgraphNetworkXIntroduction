@@ -4,9 +4,9 @@ A basic introduction to the python packages available for network creation, mani
 
 # data 
 
-The folder [Igraph](https://github.com/AuelJonas/IgraphNetworkXIntroduction/tree/master/Igraph "Igraph") contains a jupyter notebook with basic network operations using igraph. If you don't have jupyter notebook installed, you can also use the [igraph_python.py](https://github.com/AuelJonas/IgraphNetworkXIntroduction/blob/master/Igraph/igraph_python.py "igraph_python.py") file. Additionally there is a real world data network polblogs.gml which is used in the python scripts.
+The folder [Igraph](https://github.com/AuelJonas/IgraphNetworkXIntroduction/tree/master/Igraph "Igraph") contains a jupyter notebook with basic network operations using igraph. If you don't have jupyter notebook installed, you can also use the [igraph_python.py](https://github.com/AuelJonas/IgraphNetworkXIntroduction/blob/master/Igraph/igraph_python.py "igraph_python.py") file. Additionally there is a real world data network [polblogs.gml](https://github.com/AuelJonas/IgraphNetworkXIntroduction/blob/master/Igraph/polblogs.gml "polblogs") which is used in the python scripts. Loading the data might take some time.
 
-The [NetworkX](https://github.com/AuelJonas/IgraphNetworkXIntroduction/tree/master/NetworkX "NetworkX") folder similary contains a NetworkX jupyter notebook and the corresponding [NetworkX.py](https://github.com/AuelJonas/IgraphNetworkXIntroduction/blob/master/NetworkX/NetworkX.py "NetworkX.py"). As a real world data network dolphins.gml is used in the python scripts. 
+The [NetworkX](https://github.com/AuelJonas/IgraphNetworkXIntroduction/tree/master/NetworkX "NetworkX") folder similary contains a NetworkX jupyter notebook and the corresponding [NetworkX.py](https://github.com/AuelJonas/IgraphNetworkXIntroduction/blob/master/NetworkX/NetworkX.py "NetworkX.py"). As a real world data network [dolphins.gml](https://github.com/AuelJonas/IgraphNetworkXIntroduction/blob/master/NetworkX/dolphins.gml "dolphins") is used in the python scripts. This is a comparably small network.
 
 The real world datasets are taken from:
 http://www-personal.umich.edu/~mejn/netdata/
